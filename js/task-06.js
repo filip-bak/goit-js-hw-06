@@ -10,6 +10,7 @@ inputEl.addEventListener("blur", () => {
     inputEl.classList.remove("invalid");
   } else {
     inputEl.classList.add("invalid");
+    inputEl.classList.remove("valid");
   }
 
   if (inputLength === inputDataLength) {
@@ -31,6 +32,5 @@ inputEl.addEventListener("blur", () => {
   // if (inputLength < inputDataLength) {
   //   inputEl.classList.replace("valid", "invalid");
   // }
-
-  console.log(inputEl);
+  console.log("class: " + inputEl.classList.value);
 });
