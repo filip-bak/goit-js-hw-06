@@ -8,10 +8,9 @@ const btnDestroy = document.querySelector("button[data-destroy]");
 // other ↓
 // let divSize = 30;
 function createBoxes(amount) {
-  // if other need ­to comment line 12
+  // if 'other' need ­to comment line 12
   let divSize = 30;
   amount = numberInputEl.value;
-  console.log(amount);
   for (let i = 0; i < amount; i++) {
     const newDiv = document.createElement("div");
     newDiv.style.width = `${divSize}px`;
@@ -19,7 +18,6 @@ function createBoxes(amount) {
     newDiv.style.backgroundColor = getRandomHexColor();
     boxesEl.append(newDiv);
     divSize += 10;
-    console.log(divSize);
     // other ↓
     // if (divSize > 450) {
     //   divSize = 30;
