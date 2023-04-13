@@ -5,10 +5,10 @@ const boxesEl = document.querySelector("div#boxes");
 const btnCreate = document.querySelector("button[data-create]");
 const btnDestroy = document.querySelector("button[data-destroy]");
 
-const validation = (input) => {
-  const inputNumber = +input.currentTarget.value;
+const validation = (event) => {
+  const inputNumber = +event.currentTarget.value;
   if (inputNumber > 100) {
-    input.currentTarget.value = 100;
+    event.currentTarget.value = 100;
     alert("You can't create more than 100");
   }
 };
@@ -17,12 +17,15 @@ const validation = (input) => {
 
 // other option ↓
 // let divSize = 30;
+function boxesRender() {
+  createBoxes(numberInputEl.value);
+}
+
 function createBoxes(amount) {
   // if 'other option' need ­to comment line below
   let divSize = 30;
 
   let boxes = [];
-  amount = numberInputEl.value;
   for (let i = 0; i < amount; i++) {
     const newBox = document.createElement("div");
     newBox.style.width = `${divSize}px`;
@@ -36,8 +39,8 @@ function createBoxes(amount) {
     //   divSize = 30;
     // }
   }
-  boxesEl.append(...boxes);
   numberInputEl.value = null;
+  boxesEl.append(...boxes);
 }
 function destroyBoxes() {
   boxesEl.innerHTML = "";
@@ -45,6 +48,7 @@ function destroyBoxes() {
   // ↓ other option
   // divSize = 30;
 }
+
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
     .toString(16)
@@ -53,6 +57,6 @@ function getRandomHexColor() {
 
 numberInputEl.addEventListener("change", validation);
 
-btnCreate.addEventListener("click", createBoxes);
+btnCreate.addEventListener("click", boxesRender);
 
 btnDestroy.addEventListener("click", destroyBoxes);
