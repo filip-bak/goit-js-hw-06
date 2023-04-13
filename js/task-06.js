@@ -3,16 +3,14 @@ const inputEl = document.querySelector("input#validation-input");
 inputEl.addEventListener("blur", () => {
   const inputLength = inputEl.value.length;
   const inputDataLength = Number.parseInt(inputEl.dataset.length);
-
+  const classes = ["valid", "invalid"];
   // // When the input length is equal to 6 is valid
   if (inputLength === 0) {
-    inputEl.classList.remove("valid");
-    inputEl.classList.remove("invalid");
+    inputEl.classList.remove(...classes);
   } else {
     inputEl.classList.add("invalid");
     inputEl.classList.remove("valid");
   }
-
   if (inputLength === inputDataLength) {
     inputEl.classList.replace("invalid", "valid");
   }

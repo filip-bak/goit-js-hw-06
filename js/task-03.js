@@ -1,4 +1,4 @@
-const GalleryEl = document.querySelector("ul.gallery");
+const galleryEl = document.querySelector("ul.gallery");
 
 const images = [
   {
@@ -14,14 +14,14 @@ const images = [
     alt: "Group of Horses Running",
   },
 ];
-let newImages = "";
+let markup = "";
 images.forEach(({ url, alt }) => {
-  const markup = `
+  const newImage = `
   <li>
     <img src="${url}" alt="${alt}">
   </li>`;
-  newImages += markup;
+  markup += newImage;
 });
-console.log(newImages);
-console.log(GalleryEl);
-GalleryEl.insertAdjacentHTML("beforeend", newImages);
+console.log("markup: ", markup);
+console.log(galleryEl);
+galleryEl.insertAdjacentHTML("beforeend", markup);

@@ -22,5 +22,3 @@ function formSubmit(event) {
   event.currentTarget.reset();
 }
 formEl.addEventListener("submit", formSubmit);
-
-console.log(formEl);
