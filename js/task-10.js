@@ -17,9 +17,6 @@ const validation = (event) => {
 
 // other option ↓
 // let divSize = 30;
-function boxesRender() {
-  createBoxes(numberInputEl.value);
-}
 
 function createBoxes(amount) {
   // if 'other option' need ­to comment line below
@@ -57,6 +54,6 @@ function getRandomHexColor() {
 
 numberInputEl.addEventListener("change", validation);
 
-btnCreate.addEventListener("click", boxesRender);
+btnCreate.addEventListener("click", () => createBoxes(numberInputEl.value));
 
 btnDestroy.addEventListener("click", destroyBoxes);
